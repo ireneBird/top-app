@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Button, Htag, P, Rating, Tag } from '../components';
+import { Layout } from '../layout/Layout';
 
 export default function Home(): JSX.Element {
   const [rating, setRating] = useState<number>(4)
   return (
-    <div>
+    <Layout>
       <Htag tag='h1'>Hello world</Htag>
       <Button appearance='primary'>Узнать подробнее</Button>
       <Button appearance='ghost' arrow='right'>Узнать подробнее</Button>
@@ -20,6 +21,6 @@ export default function Home(): JSX.Element {
       <Tag color='grey' size='m'>Ghost</Tag>
 
       <Rating rating={rating} isEditable setRating={setRating} />
-    </div>
+    </Layout>
   );
 }
