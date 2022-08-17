@@ -48,7 +48,9 @@ export const Rating = ({ isEditable = false, setRating, rating, className, ...pr
   }
 
   const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
-    if (e.code !== 'Space') return;
+    if (e.code !== 'Space' || !setRating) {
+      return;
+    }
 
     setRating(i)
   }
