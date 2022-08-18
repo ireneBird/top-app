@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap");
+
 html,
 body {
   margin: 0;
@@ -23,6 +25,7 @@ a {
   --primary: #7653fc;
   --green: #1dc37e;
   --green-light: #c8f8e4;
+  --grey-dark: #787d85;
   --grey-light: #ebebeb;
   --red: #fc836d;
   --font-family: "Noto Sans", sans-serif;
