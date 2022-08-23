@@ -9,7 +9,7 @@ import { withLayout } from '../../layout/Layout';
 
 const firstCategory = 0;
 
-function Course({ page, products }: CourseProps): JSX.Element {
+function Course({ page, products, menu }: CourseProps): JSX.Element {
   return (
     <>
       {products && products.length}
@@ -33,6 +33,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: GetStaticPropsContext<ParsedUrlQuery>) => {
   if (!params) return { notFound: true }
 
+  const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
+    firstCategory
+  })
   const { data: page } = await axios.get<TopPageModel>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/byAlias/' + params.alias);
   const { data: products } = await axios.post<ProductModel[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/product/find', {
     category: page.category,
@@ -41,6 +44,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: Ge
 
   return {
     props: {
+      menu,
       firstCategory,
       page,
       products
@@ -49,6 +53,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: Ge
 };
 
 interface CourseProps extends Record<string, unknown> {
+  menu: MenuItem[],
   firstCategory: number;
   page: TopPageModel;
   products: ProductModel[];
