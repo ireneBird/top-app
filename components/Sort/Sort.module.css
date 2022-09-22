@@ -1,0 +1,17 @@
+.sortIcon {
+  display: none;
+  margin-right: 10px;
+}
+
+.active {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.active .sortIcon {
+  display: inline;
+}
+
+.sortSpan:not(:last-child) {
+  margin-right: 40px;
+}
