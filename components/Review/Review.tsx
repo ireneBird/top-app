@@ -22,7 +22,6 @@ export const Review = ({ review, className, ...props }: ReviewProps): JSX.Elemen
         <Rating rating={rating} />
       </div>
       <p className={styles.description}>{description}</p>
-
     </div>
   )
 }

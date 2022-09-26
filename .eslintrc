@@ -5,6 +5,7 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "react/display-name": "off",
     "semi": "off",
     "@typescript-eslint/semi": [
       "warn"

@@ -40,7 +40,7 @@ export interface ProductModel {
   blog: Blog;
   companyId: string;
   clicks: number;
-  reviews: RewiewModel[];
+  reviews: ReviewModel[];
   reviewCount: number;
   reviewAvg?: any;
 }

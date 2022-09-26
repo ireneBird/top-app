@@ -8,8 +8,23 @@
   border-radius: 5px;
   font-size: 16px;
   font-family: var(--font-family);
+  width: 100%;
 }
 
 .textarea::placeholder {
   color: var(--grey);
+}
+
+.wrapper {
+  position: relative;
+}
+
+.error {
+  border: 1px solid var(--red);
+}
+.errorMes {
+  color: var(--red);
+  position: absolute;
+  left: 0;
+  bottom: -15px;
 }
