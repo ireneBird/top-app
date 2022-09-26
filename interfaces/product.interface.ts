@@ -9,7 +9,7 @@ export interface Blog {
   _id: string;
 }
 
-export interface RewiewModel {
+export interface ReviewModel {
   _id: string;
   name: string;
   title: string;
@@ -30,7 +30,8 @@ export interface ProductModel {
   credit: number;
   oldPrice: number;
   characteristics: ProductCharacteristic[];
-  advantages: string;
+  advantages?: string;
+  disadvantages?: string;
   initialRating: number;
   createdAt: Date;
   updatedAt: Date;

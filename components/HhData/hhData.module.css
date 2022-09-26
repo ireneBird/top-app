@@ -19,9 +19,11 @@
   font-size: 20px;
   line-height: 27px;
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .countValue {
+  text-align: center;
   color: var(--primary);
   font-weight: 700;
   font-size: 36px;
@@ -32,6 +34,7 @@
   font-weight: 700;
   font-size: 26px;
   line-height: 35px;
+  text-align: center;
 }
 
 .rate {

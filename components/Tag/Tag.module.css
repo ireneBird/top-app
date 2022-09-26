@@ -2,6 +2,7 @@
   padding: 5px 10px;
   border-radius: 20px;
   display: inline-block;
+  margin-bottom: 5px;
 }
 
 .tag:not(:last-of-type) {
