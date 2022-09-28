@@ -42,15 +42,9 @@
   color: var(--grey-dark);
   padding: 5px 0;
 }
-.secondLevelBlock {
-  display: none;
-}
-.secondLevelBlockOpened {
-  display: block;
-}
 
-.secondLevelBlock:last-child {
-  margin-bottom: 20px;
+.secondLevelBlock {
+  overflow: hidden;
 }
 
 .thirdLevel {
