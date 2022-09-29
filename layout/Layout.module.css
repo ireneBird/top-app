@@ -34,6 +34,7 @@
       "header"
       "body"
       "footer";
+    gap: 10px 15px;
   }
 
   .sidebar {
@@ -41,7 +42,7 @@
   }
 
   .header {
-    display: block;
+    display: grid;
   }
 
   .body {

@@ -2,14 +2,18 @@ import styles from './Button.module.css';
 import { ButtonProps } from './Button.props';
 import cn from 'classnames';
 import ArrowIcon from './arrow.svg';
+import { motion, useMotionValue } from 'framer-motion';
 
 export const Button = ({ children, appearance, arrow = 'none', className, ...props }: ButtonProps): JSX.Element => {
+  const scale = useMotionValue(1);
   return (
-    <button className={cn(styles.button, className, {
+    <motion.button className={cn(styles.button, className, {
       [styles.primary]: appearance === 'primary',
       [styles.ghost]: appearance === 'ghost'
     })}
       {...props}
+      whileHover={{ scale: 1.05 }}
+      style={{ scale }}
     >
       {children}
       {
@@ -19,6 +23,6 @@ export const Button = ({ children, appearance, arrow = 'none', className, ...pro
           <ArrowIcon />
         </span>
       }
-    </button>
+    </motion.button>
   )
 }
