@@ -31,7 +31,6 @@
 
   font-weight: 300;
   font-size: 14px;
-  line-height: 16px;
 }
 
 .secondLevel {
@@ -41,6 +40,7 @@
   font-weight: 300;
   color: var(--grey-dark);
   padding: 5px 0;
+  outline-offset: -1px;
 }
 
 .secondLevelBlock {
@@ -50,10 +50,10 @@
 .thirdLevel {
   font-weight: 500;
   font-size: 14px;
-  line-height: 19px;
   margin-bottom: 10px;
   color: var(--grey-dark);
   display: block;
+  outline-offset: -1px;
 }
 
 .thirdLevel:hover,

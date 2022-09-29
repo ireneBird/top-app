@@ -21,10 +21,25 @@
 
 .body {
   grid-area: body;
+  outline: none;
 }
 
 .footer {
   grid-area: footer;
+}
+
+.tabContent {
+  position: fixed;
+  left: 100px;
+  top: 0;
+  height: 0;
+  overflow: hidden;
+  background: var(--primary);
+  color: var(--white);
+}
+
+.displayed {
+  height: auto;
 }
 
 @media (max-width: 765px) {
