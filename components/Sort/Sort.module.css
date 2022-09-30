@@ -12,6 +12,11 @@
   display: inline;
 }
 
-.sortSpan:not(:last-child) {
+.sortBtn {
+  border: none;
+  background: none;
+}
+
+.sortBtn:not(:last-child) {
   margin-right: 40px;
 }
