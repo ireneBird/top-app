@@ -9,17 +9,22 @@ import { ProductModel } from '../../interfaces/product.interface';
 import { withLayout } from '../../layout/Layout';
 import { TopPageComponent } from '../../page-components';
 import Head from 'next/head';
+import { Error404 } from '../404'
 
 function TopPage({ firstCategory, page, products, menu }: TopPageProps): JSX.Element {
+  if (!page || !products) return <Error404 />;
+
   return (
     <>
-      <Head>
-        <title>{page.metaTitle}</title>
-        <meta name='description' content={page.metaDescription} />
-        <meta name='og:title' content={page.metaTitle} />
-        <meta name='og:description' content={page.metaDescription} />
-      </Head>
-      <TopPageComponent firstCategory={firstCategory} products={products} page={page} />
+      {page && products && <>
+        <Head>
+          <title>{page.metaTitle}</title>
+          <meta name='description' content={page.metaDescription} />
+          <meta name='og:title' content={page.metaTitle} />
+          <meta name='og:description' content={page.metaDescription} />
+        </Head>
+        <TopPageComponent firstCategory={firstCategory} products={products} page={page} />
+      </>}
     </>
   );
 }
@@ -39,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true
+    fallback: false
   }
 }
 
