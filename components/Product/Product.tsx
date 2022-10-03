@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ProductProps } from './Product.props'
 import cn from 'classnames'
 import styles from './Product.module.css'
