@@ -1,17 +1,20 @@
 .wrapper {
   display: grid;
-  grid-template-columns: auto 230px minmax(320px, 1200px) auto;
-  grid-template-rows: auto 1fr auto;
-  gap: 40px 30px;
-  min-height: 100vh;
   grid-template-areas:
     ". header header ."
     ". sidebar body ."
     "footer footer footer footer";
+  grid-template-columns: auto 230px minmax(320px, 1200px) auto;
+  /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+  grid-template-rows: auto 1fr auto;
+  gap: 40px 30px;
+
+  min-height: 100vh;
 }
 
 .header {
   grid-area: header;
+
   display: none;
 }
 
@@ -21,6 +24,7 @@
 
 .body {
   grid-area: body;
+
   outline: none;
 }
 
@@ -30,12 +34,15 @@
 
 .tabContent {
   position: fixed;
-  left: 100px;
   top: 0;
-  height: 0;
+  left: 100px;
+
   overflow: hidden;
-  background: var(--primary);
+
+  height: 0;
+
   color: var(--white);
+  background: var(--primary);
 }
 
 .displayed {
@@ -44,11 +51,11 @@
 
 @media (max-width: 765px) {
   .wrapper {
-    grid-template-columns: minmax(320px, 1200px);
     grid-template-areas:
       "header"
       "body"
       "footer";
+    grid-template-columns: minmax(320px, 1200px);
     gap: 10px 15px;
   }
 

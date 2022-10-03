@@ -1,10 +1,12 @@
 .sortIcon {
   display: none;
+
   margin-right: 10px;
 }
 
 .active {
   color: var(--primary);
+
   font-weight: bold;
 }
 

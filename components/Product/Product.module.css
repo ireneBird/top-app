@@ -1,6 +1,9 @@
 .product {
   display: grid;
-  grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratingstart] auto [end];
+  grid-template-columns:
+    [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr
+    [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratingstart] auto [end];
+
   margin-top: 30px;
   padding: 30px;
 }
@@ -18,6 +21,7 @@
 .price,
 .priceTitle {
   grid-column: pricestart / priceend;
+
   white-space: nowrap;
 }
 
@@ -50,24 +54,27 @@
 }
 
 .title {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 27px;
   align-self: flex-end;
+
   margin-bottom: 5px;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 27px;
 }
 
 .price,
 .credit {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 27px;
   align-self: flex-end;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
 }
 
 .month {
-  font-weight: 400;
   font-size: 14px;
+  font-weight: 400;
 }
 
 .rating {
@@ -75,18 +82,19 @@
 }
 
 .description {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
   margin-bottom: 15px;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .priceTitle,
 .rateTitle,
 .creditTitle {
-  font-style: normal;
-  font-weight: 300;
   font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
   line-height: 19px;
 }
 
@@ -95,46 +103,53 @@
 }
 
 .advTitle {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  margin-bottom: 5px;
   margin-top: 0;
+  margin-bottom: 5px;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
 }
 
 .advantages {
   padding-left: 15px;
+
   border-left: 3px solid var(--green);
 }
+
 .disadvantages {
   padding-left: 15px;
+
   border-left: 3px solid var(--red);
 }
 
 .characteristics {
   display: grid;
+  align-items: end;
+
+  padding-right: 30px;
   grid-template-columns: auto 1fr auto;
   gap: 10px;
-  padding-right: 30px;
-  align-items: end;
 }
 
 .characteristicsName {
-  font-weight: 700;
   font-size: 16px;
+  font-weight: 700;
   line-height: 32px;
 }
 
 .characteristicsValue {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
   text-align: end;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
 }
 
 .characteristicsDots {
-  border-bottom: 1px dashed var(--grey-light);
   margin-bottom: 5px;
+
+  border-bottom: 1px dashed var(--grey-light);
 }
 
 .actions > button:not(:last-child) {
@@ -172,21 +187,27 @@
   .title {
     grid-area: title;
   }
+
   .tags {
     grid-area: tags;
   }
+
   .price {
     grid-area: price;
   }
+
   .priceTitle {
     grid-area: priceTitle;
   }
+
   .credit {
     grid-area: credit;
   }
+
   .creditTitle {
     grid-area: creditTitle;
   }
+
   .rating {
     grid-area: rating;
   }
@@ -202,6 +223,7 @@
   .description {
     grid-area: desc;
   }
+
   .feature {
     grid-area: feature;
   }

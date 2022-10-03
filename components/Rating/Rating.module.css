@@ -11,10 +11,11 @@
 }
 
 .errorMes {
-  color: var(--red);
   position: absolute;
-  left: 0;
   bottom: -20px;
+  left: 0;
+
+  color: var(--red);
 }
 
 .wrapper {

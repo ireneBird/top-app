@@ -1,10 +1,11 @@
 .form {
+  display: grid;
+  align-items: center;
+
   font-size: 14px;
   line-height: 24px;
-  display: grid;
   grid-template-columns: [start] auto 1fr auto [end];
   gap: 20px 30px;
-  align-items: center;
 }
 
 .title {
@@ -28,16 +29,19 @@
   grid-template-columns: auto 1fr;
   gap: 20px;
 }
+
 .messagePanel {
-  padding: 30px;
   position: relative;
-  border-radius: 5px;
+
   margin-top: 20px;
+  padding: 30px;
+
+  border-radius: 5px;
 }
 
 .success {
-  background: var(--green-light);
   color: var(--green);
+  background: var(--green-light);
 }
 
 .success p {
@@ -45,23 +49,26 @@
 }
 
 .successTitle {
-  font-weight: 700;
   margin-top: 0;
   margin-bottom: 10px;
-}
-.buttonClose {
-  background: none;
-  border: none;
 
+  font-weight: 700;
+}
+
+.buttonClose {
   position: absolute;
-  right: 20px;
   top: 20px;
+  right: 20px;
+
   cursor: pointer;
+
+  border: none;
+  background: none;
 }
 
 .error {
-  background: var(--red-light);
   color: var(--red);
+  background: var(--red-light);
 }
 
 .error .buttonClose path {
