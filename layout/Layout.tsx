@@ -25,7 +25,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
     <div className={styles.wrapper}>
       <a
         onKeyDown={skipContentAction}
-        tabIndex={1}
+        tabIndex={0}
         onFocus={() => setIsDisplayTab(true)}
         className={cn(styles.tabContent, {
           [styles.displayed]: isDisplayTab
