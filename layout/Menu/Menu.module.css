@@ -19,6 +19,11 @@
   fill: var(--primary);
 }
 
+.list {
+  padding-left: 0;
+  list-style: none;
+}
+
 .secondBlock {
   border-left: 1px solid #dfdfdf;
   padding-left: 32px;
@@ -38,6 +43,9 @@
   color: var(--grey-dark);
   padding: 5px 0;
   outline-offset: -1px;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .secondLevelBlock {

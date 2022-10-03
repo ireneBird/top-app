@@ -13,7 +13,7 @@ import { API } from '../../helpers/api';
 import { useState } from 'react';
 
 export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
-  const { register, control, handleSubmit, formState: { errors }, reset } = useForm<IReviewForm>();
+  const { register, control, handleSubmit, formState: { errors }, reset, clearErrors } = useForm<IReviewForm>();
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [error, setError] = useState<string>();
 
@@ -39,6 +39,7 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
           placeholder='Имя'
           error={errors.name}
           tabIndex={isOpened ? 0 : -1}
+          aria-invalid={!!errors.name}
         />
         <Input
           {...register('title', { required: { value: true, message: "Заполните заголовок" } })}
@@ -46,6 +47,7 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
           placeholder='Заголовок отзыва'
           error={errors.title}
           tabIndex={isOpened ? 0 : -1}
+          aria-invalid={!!errors.title}
         />
         <div className={styles.rating}>
           <span>Оценка:</span>
@@ -71,28 +73,43 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
           placeholder='Текст отзыва'
           error={errors.description}
           tabIndex={isOpened ? 0 : -1}
+          aria-label='Текст отзыва'
+          aria-invalid={!!errors.description}
         />
         <div className={styles.submit}>
           <Button
             className={styles.button}
             appearance='primary'
             tabIndex={isOpened ? 0 : -1}
+            onClick={() => clearErrors()}
           >Отправить
           </Button>
           <span>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
         </div>
       </div>
       {
-        isSuccess && <div className={cn(styles.messagePanel, styles.success)}>
+        isSuccess && <div role='alert' className={cn(styles.messagePanel, styles.success)}>
           <h4 className={styles.successTitle}>Ваш отзыв успешно отправлен</h4>
           <p>Спасибо, ваш отзыв будет опубликован после проверки</p>
-          <CloseIcon className={styles.close} onClick={() => setIsSuccess(false)} />
+          <button
+            onClick={() => setIsSuccess(false)}
+            className={styles.buttonClose}
+            aria-label='Закрыть оповещение'
+          >
+            <CloseIcon />
+          </button>
         </div>
       }
       {
-        error && <div className={cn(styles.messagePanel, styles.error)}>
+        error && <div role='alert' className={cn(styles.messagePanel, styles.error)}>
           {error}
-          <CloseIcon className={styles.close} onClick={() => setError(undefined)} />
+          <button
+            onClick={() => setError(undefined)}
+            className={styles.buttonClose}
+            aria-label='Закрыть оповещение'
+          >
+            <CloseIcon />
+          </button>
         </div>
       }
 

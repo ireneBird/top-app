@@ -20,3 +20,7 @@
 .sortBtn:not(:last-child) {
   margin-right: 40px;
 }
+
+.sortName {
+  display: none;
+}

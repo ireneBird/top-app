@@ -49,18 +49,23 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
         </div>
         <div className={styles.title}>{product.title}</div>
         <div className={styles.price}>
-          {priceRu(product.price)}
-          {product.oldPrice && <Tag className={styles.oldPrice} color='green'>{priceRu(product.oldPrice - product.price)}</Tag>}
+          <span className='visualHidden'>цена</span>{priceRu(product.price)}
+          {product.oldPrice && <Tag className={styles.oldPrice} color='green'>
+            <span className='visualHidden'>Скидка</span>
+            {priceRu(product.oldPrice - product.price)}</Tag>}
         </div>
-        <div className={styles.credit}>{priceRu(product.credit)}/<span className={styles.month}>мес</span></div>
+        <div className={styles.credit}>
+          <span className='visualHidden'>в кредит</span>
+          {priceRu(product.credit)}/<span className={styles.month}>мес</span></div>
         <div className={styles.rating}>
+          <span className='visualHidden'>{'рейтинг ' + (product.reviewAvg ?? product.initialRating)}</span>
           <Rating rating={product.reviewAvg ?? product.initialRating} />
         </div>
         <div className={styles.tags}>
           {product.categories.map(c => <Tag key={c} color='ghost'>{c}</Tag>)}
         </div>
-        <div className={styles.priceTitle}>цена</div>
-        <div className={styles.creditTitle}>в кредит</div>
+        <div className={styles.priceTitle} aria-hidden>цена</div>
+        <div className={styles.creditTitle} aria-hidden>в кредит</div>
         <div className={styles.rateTitle}><a href='#ref' onClick={scrollToReview}>{product.reviewCount} {declOfNum(+product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</a></div>
         <Divider className={styles.hr} />
         <div className={styles.description}>{product.description}</div>
@@ -94,6 +99,7 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
             appearance="ghost"
             arrow={isReviewOpened ? 'down' : 'right'}
             onClick={() => setIsReviewOpened(!isReviewOpened)}
+            aria-expanded={isReviewOpened}
           >
             Читать отзывы
           </Button>
